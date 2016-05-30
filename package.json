@@ -5,16 +5,20 @@
     "name": "Rocket.Chat",
     "url": "http://rocket.chat/"
   },
-  "contributors": [{
-    "name": "Sing Li",
-    "email": "sing.li@rocket.chat"
-  }, {
-    "name": "Gabriel Engel",
-    "email": "gabriel.engel@rocket.chat"
-  }, {
-    "name": "Aaron Ogle",
-    "email": "aaron.olge@rocket.chat"
-  }],
+  "contributors": [
+    {
+      "name": "Sing Li",
+      "email": "sing.li@rocket.chat"
+    },
+    {
+      "name": "Gabriel Engel",
+      "email": "gabriel.engel@rocket.chat"
+    },
+    {
+      "name": "Aaron Ogle",
+      "email": "aaron.ogle@rocket.chat"
+    }
+  ],
   "description": "Hubot Rocket.Chat Adapter",
   "keywords": [
     "hubot",
@@ -33,13 +37,24 @@
     "email": "support@rocket.chat"
   },
   "devDependencies": {
-    "coffee-script": "~1.7.1"
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.1",
+    "babel-eslint": "^6.0.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.9.0",
+    "coffee-script": "~1.7.1",
+    "eslint": "^2.11.0",
+    "eslint-config-defaults": "^9.0.0"
   },
-  "main": "./src/rocketchat",
+  "main": "./dist/rocketchat",
+  "scripts": {
+	  "build": "babel src/rocketchat.js -o dist/rocketchat.js; babel src/rocketchat_driver.js -o dist/rocketchat_driver.js"
+  },
   "dependencies": {
     "asteroid": "https://github.com/RocketChat/asteroid.git",
+    "hubot": "^2.19.0",
+    "lru-cache": "~4.0.0",
     "parent-require": "^1.0.0",
-    "q": "^1.4.1",
-    "lru-cache": "~4.0.0"
+    "q": "^1.4.1"
   }
 }
