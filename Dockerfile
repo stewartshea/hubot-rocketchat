@@ -4,6 +4,9 @@ MAINTAINER Rocket.Chat Team <buildmaster@rocket.chat>
 RUN npm install -g coffee-script yo generator-hubot  &&  \
 	useradd hubot -m
 
+RUN npm install ansible && \
+	npm install ansible-playbook-cli-js
+
 USER hubot
 
 WORKDIR /home/hubot
