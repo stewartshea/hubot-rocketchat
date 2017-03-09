@@ -38,4 +38,4 @@ CMD node -e "console.log(JSON.stringify('$EXTERNAL_SCRIPTS'.split(',')))" > exte
 	npm install $(node -e "console.log('$EXTERNAL_SCRIPTS'.split(',').join(' '))") && \
 	bin/hubot -n $BOT_NAME -a rocketchat
 
-EXPOSE 3001
+EXPOSE 8080
